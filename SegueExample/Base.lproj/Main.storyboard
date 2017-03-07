@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Landing Page View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LandingPageViewController" customModule="SegueExample" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,96 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yzg-pa-ARe">
+                                <rect key="frame" x="152" y="318" width="70" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FIf-ge-woK"/>
+                                    <constraint firstAttribute="width" constant="70" id="nnz-vZ-mPN"/>
+                                </constraints>
+                                <state key="normal" title="Enter"/>
+                                <connections>
+                                    <action selector="enterButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ciR-lG-HS1"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1a-WX-F1A">
+                                <rect key="frame" x="37.5" y="393" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="TfU-qO-vs4"/>
+                                    <constraint firstAttribute="width" constant="300" id="pcn-1c-hpR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yzg-pa-ARe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2F4-Pr-Yi1"/>
+                            <constraint firstItem="Z1a-WX-F1A" firstAttribute="top" secondItem="Yzg-pa-ARe" secondAttribute="bottom" constant="45" id="LhY-qn-bTN"/>
+                            <constraint firstItem="Z1a-WX-F1A" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rQ3-rc-LNt"/>
+                            <constraint firstItem="Yzg-pa-ARe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="v3e-FC-ihV"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="Z1a-WX-F1A" id="YMj-0I-ctT"/>
+                        <segue destination="nya-6J-wI4" kind="showDetail" identifier="FromLandingToSecondSegue" id="kK1-EV-lbT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
+        </scene>
+        <!--Second Page View Controller-->
+        <scene sceneID="sMH-F9-6rf">
+            <objects>
+                <viewController storyboardIdentifier="SecondPageViewControllerID" id="nya-6J-wI4" customClass="SecondPageViewController" customModule="SegueExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lLm-ts-cQk"/>
+                        <viewControllerLayoutGuide type="bottom" id="rOK-Fw-nWf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zD0-zP-m3Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zpe-6R-SRu">
+                                <rect key="frame" x="169.5" y="318" width="35" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="JZU-Ey-GJ9"/>
+                                    <constraint firstAttribute="width" constant="35" id="zhz-Rh-QTP"/>
+                                </constraints>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="nya-6J-wI4" eventType="touchUpInside" id="f9N-6M-OqC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBX-aN-xgj">
+                                <rect key="frame" x="37.5" y="408" width="300" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="fS6-U5-Ni9"/>
+                                    <constraint firstAttribute="height" constant="100" id="m8Q-oT-RsP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cBX-aN-xgj" firstAttribute="centerX" secondItem="zD0-zP-m3Q" secondAttribute="centerX" id="6HG-uG-2n2"/>
+                            <constraint firstItem="cBX-aN-xgj" firstAttribute="top" secondItem="zpe-6R-SRu" secondAttribute="bottom" constant="60" id="Bk3-ej-COM"/>
+                            <constraint firstItem="zpe-6R-SRu" firstAttribute="centerY" secondItem="zD0-zP-m3Q" secondAttribute="centerY" id="O42-T3-rgn"/>
+                            <constraint firstItem="zpe-6R-SRu" firstAttribute="centerX" secondItem="zD0-zP-m3Q" secondAttribute="centerX" id="r1K-Km-wSQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="cBX-aN-xgj" id="hEF-w7-5DG"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="FromSecondToLandingSegue" id="zj2-0u-1X7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hnu-pj-Vrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649" y="139"/>
         </scene>
     </scenes>
 </document>

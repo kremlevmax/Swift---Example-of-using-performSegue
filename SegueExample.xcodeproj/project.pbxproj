@@ -8,20 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		D930955A1E6EF57300A2E647 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D93095591E6EF57300A2E647 /* AppDelegate.swift */; };
-		D930955C1E6EF57300A2E647 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930955B1E6EF57300A2E647 /* ViewController.swift */; };
+		D930955C1E6EF57300A2E647 /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930955B1E6EF57300A2E647 /* LandingPageViewController.swift */; };
 		D930955F1E6EF57300A2E647 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D930955D1E6EF57300A2E647 /* Main.storyboard */; };
 		D93095611E6EF57300A2E647 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D93095601E6EF57300A2E647 /* Assets.xcassets */; };
 		D93095641E6EF57300A2E647 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D93095621E6EF57300A2E647 /* LaunchScreen.storyboard */; };
+		D930956D1E6EF67600A2E647 /* SecondPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D930956C1E6EF67600A2E647 /* SecondPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D93095561E6EF57300A2E647 /* SegueExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SegueExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D93095591E6EF57300A2E647 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D930955B1E6EF57300A2E647 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D930955B1E6EF57300A2E647 /* LandingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPageViewController.swift; sourceTree = "<group>"; };
 		D930955E1E6EF57300A2E647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D93095601E6EF57300A2E647 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D93095631E6EF57300A2E647 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D93095651E6EF57300A2E647 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D930956C1E6EF67600A2E647 /* SecondPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,23 @@
 		D93095581E6EF57300A2E647 /* SegueExample */ = {
 			isa = PBXGroup;
 			children = (
-				D93095591E6EF57300A2E647 /* AppDelegate.swift */,
-				D930955B1E6EF57300A2E647 /* ViewController.swift */,
+				D930955B1E6EF57300A2E647 /* LandingPageViewController.swift */,
+				D930956C1E6EF67600A2E647 /* SecondPageViewController.swift */,
 				D930955D1E6EF57300A2E647 /* Main.storyboard */,
 				D93095601E6EF57300A2E647 /* Assets.xcassets */,
+				D930956B1E6EF58000A2E647 /* Extra files */,
+			);
+			path = SegueExample;
+			sourceTree = "<group>";
+		};
+		D930956B1E6EF58000A2E647 /* Extra files */ = {
+			isa = PBXGroup;
+			children = (
+				D93095591E6EF57300A2E647 /* AppDelegate.swift */,
 				D93095621E6EF57300A2E647 /* LaunchScreen.storyboard */,
 				D93095651E6EF57300A2E647 /* Info.plist */,
 			);
-			path = SegueExample;
+			name = "Extra files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D930955C1E6EF57300A2E647 /* ViewController.swift in Sources */,
+				D930956D1E6EF67600A2E647 /* SecondPageViewController.swift in Sources */,
+				D930955C1E6EF57300A2E647 /* LandingPageViewController.swift in Sources */,
 				D930955A1E6EF57300A2E647 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
