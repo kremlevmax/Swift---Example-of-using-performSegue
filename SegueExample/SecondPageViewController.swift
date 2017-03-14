@@ -8,14 +8,13 @@
 
 import UIKit
 
-class SecondPageViewController: UIViewController {
+class SecondPageViewController: UIViewController, UITextFieldDelegate {
 
     //Outlets:
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var textField: UITextField!
     
     //Variables:
-    
-    var answerMessage = "This is answer message!"
     
     var _messageForLabel: String!
     
@@ -31,7 +30,7 @@ class SecondPageViewController: UIViewController {
     
     //Actions:
     @IBAction func backButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "FromSecondToLandingSegue", sender: answerMessage)
+        performSegue(withIdentifier: "FromSecondToLandingSegue", sender: textField.text!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -45,24 +44,23 @@ class SecondPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         messageLabel.text = messageForLabel
+        textField.delegate = self
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector (SecondPageViewController.dissmissKeyboard)))
+    }
+    
+    func dissmissKeyboard() {
+        textField.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
-
-}
